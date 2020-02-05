@@ -38,3 +38,19 @@ console.log(numbers.indexOf(9)); //numbers[2] == 9，从前往后数
 console.log(numbers.indexOf(90)); //因为numbers数组里没有90，所以返回-1
 console.log(numbers.lastIndexOf(9)); //numbers[4] == 9，从后往前数
 console.log(numbers.lastIndexOf(90)); //因为numbers数组里没有90，所以返回-1
+
+//ES6:find findIndex 接受一个回调函数，搜索满足该函数条件的值
+console.log(numbers);
+
+function multipleOf5(element, index, array) {
+    return (element % 5 == 0) ? true : false;
+}
+console.log(numbers.find(multipleOf5)); //find返回从前往后数第一个满足条件的值
+console.log(numbers.findIndex(multipleOf5)); //findIndex返回这个值的索引
+//如果没有满足条件的，find返回undefined，findIndex返回-1
+
+//ES7：includes查看符合条件的元素是否存在
+console.log(numbers);
+console.log(numbers.includes(9)); //numbers里存在9，true
+console.log(numbers.includes(9, 3)); //numbers里，下标3之后存在元素9，true
+console.log(numbers.includes(9, 5)); //numbers里，下标5之后不存在9，false
